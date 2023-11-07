@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(157, 151, 211);
+}
+
+#wrapper{
+    max-width: 960px;
+    background-color: rgb(207, 204, 233);
+    margin: 0px auto;
+    /* căn giữa */
+}
+#header{
+    background-color:rgb(157, 151, 211);
+    /* màu nền của header */
+    color: rgb(137, 105, 105);
+    /* màu chữ  */
+    padding: 10px 50px 50px 10px;
+    /* căn chỉnh độ rộng của thẻ header đến viền */
+    text-align: center;
+}
+#main-content{
+    background-color: rgb(178, 173, 225);
+    display: flex;
+    /* căn chỉnh các phần tử trong đó gồm có content và side bar hiển tị theo hàng ngang */
+    min-height:500px;
+    /* độ cao nhỏ nhất của phần thân . nó sẽ đẩy phần footer xuống dưới( lớn hơn hoặc = 500px)*/
+}
+#content{
+   
+    color:  rgb(137, 105, 105);
+    width: 100%;
+    /* flex-basis: 70%; giống như width: 70% */
+    /* độ rộng 70% */
+    
+}
+#sidebar{
+    flex-basis: 25%;
+    color:  rgb(142, 102, 102);
+    
+}
+#footer{
+    background-color: rgb(158, 151, 223);
+    /* màu nền của phần kết */
+    max-width: 960px;
+    padding: 15px 0px;
+    /* độ rộng trên dưới = 15px , trái phải = 0 px  */
+    font-size: 10px;
+    /* size chữ = 10px */
+    text-align: center;
+    /* căn giữa footer  */
+}
+#chenanh{
+    margin: 0px 120px;
+    color: rgb(142, 102, 102) ;
+}
+#logo{
+   margin: 0px 0px 0px 0px;
+   padding: 0px;
+}
+#content0{
+    flex-basis: 25%;
+    color:  rgb(142, 102, 102);
+}

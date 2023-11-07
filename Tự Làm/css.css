@@ -1,0 +1,62 @@
+body{
+    background: url(https://wallpapers.com/images/hd/4k-marvel-future-revolution-art-srz7c20vbtxt7py2.jpg);
+    background-size: cover;
+}
+#wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0px 0px 0px 200px;
+}
+#form-login{
+    max-width: 400px;
+    background-color: rgba(0, 0 , 0, 0.8);
+    flex-grow: 1;
+    padding: 30px 20px 40px;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0 , 0, 0.8) ;
+}
+.form-heading{
+    font-size: 25px;
+    color: #d5d5d5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-group{
+    border-bottom: 1px solid #5a5a5a;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.form-group i{
+    color: #ffffff;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+.form-input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #f5f5f5;
+    padding-right: 190px;
+}
+.form-input::placeholder{
+    color: #a5a5a5;
+    padding-right: 190px;
+}
+#eye i{
+    padding-left: 0px;
+}
+.form-submit{
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #a5a5a5;
+    width: 100%;
+    padding: 6px 20px;
+    transition: 0.25s ease-in-out;
+    margin-top: 10px;
+}
+.form-submit:hover{
+    border: 1px solid #545454;;
+}
