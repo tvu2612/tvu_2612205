@@ -2,7 +2,7 @@ export default function Button(props){
 
     return(
         <Button 
-        className={'btn ${props.disabled ? "disable": ""}'} 
+        className={`btn ${props.disabled ? "disabled": ""}`} 
         onClick={props.onClick} 
         disabled={props.disabled}
         >

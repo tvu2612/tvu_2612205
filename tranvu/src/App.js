@@ -1,68 +1,107 @@
-import "./style.css";
-import "./App.css";
-import React, { useState } from "react";
-export default function App() {
-  const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (values.firstName && values.lastName && values.email) {
-      setValid(true);
-    }
-    setSubmitted(true);
-  };
 
-  const handleInputChange = (event) => {
-    event.preventDefault();
-    const { name, value } = event.target;
-    setValues((values) => ({ ...values, [name]: value }));
-  };
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        {submitted && valid&&(
-          <div>
-            {" "}
-            <h2>
-              Welcome, {values.firstName} {values.lastName} {" "}
-              </h2>
-              <div>Your Registration was successful!</div>
-          </div>
-        )}
-        {!valid && (
-          <input
-            type="text"
-            placeholder="First Name"
-            name="firstName"
-            value={values.firstName}
-            onChange={handleInputChange}
-          />)}
-          {submitted && !values.firstName && (<span>Please enter ur first name</span>)}
-          {!valid && (
-          <input
-            type="text"
-            placeholder="Last Name"
-            name="lastName"
-            value={values.lastName}
-            onChange={handleInputChange}
-          />)}
-          {submitted && !values.firstName && (<span>Please enter ur last name</span>)}
-          {!valid && (
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={values.email}
-            onChange={handleInputChange}
-          />)}
-          {submitted && !values.firstName && (<span>Please enter ur email</span>)}
-        <button type="submit">Register</button>
-      </form>
+import "./style.css"
+import { useState } from "react";
+import Input from "./Input";
+import Button from "./Button";
+
+import validateEmail from "./utils";
+
+
+export default function App(){
+  const [email, setEmail] = useState({
+      value : "",
+      isTouched:false,
+      isValid:false
+    });
+
+
+  const [pwd, setPwd] = useState({
+    value:"",
+    isTouched:false,
+    isValid:false
+  });
+
+  const [confirmPwd, setConfirmPwd] = useState({
+    value:"",
+    isTouched:false,
+    isValid:false
+  });
+
+  function handleEmailInput(e){
+    setEmail({
+        isTouched:true,
+        value:e.target.value,
+        isValid:validateEmail(e.target.value)
+      });
+  }
+
+  function handlePwdInput(e){
+    setPwd({
+      isTouched:true,
+      value:e.target.value,
+      isValid:e.target.value.length >= 6 ? true:false
+    });
+  }
+
+  function handleConfirmPwdInput(e){
+    setConfirmPwd({
+      isTouched:true,
+      value:e.target.value,
+      isValid:e.target.value === pwd.value ? true : false
+    });
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    window.alert(
+      // 'Submitted: \n Email: ${email.value} \n Password: ${pwd.value}'
+    );
+  }
+
+  const formIsValid = email.isValid && pwd.isValid && confirmPwd.isValid;
+
+  return(
+    <div className="App">
+      <div className="form-container">
+      <Input
+        name="email"
+        type="text"
+        lang="Email"
+        onChange={handleEmailInput}
+        isValid={email.isValid}
+        isTouched={email.isTouched}
+        placeholder="Email..."
+        value={email.value}
+        errorMsg ="Enter a valid email"/>
+      <Input
+        name="password"
+        type="password"
+        label="password"
+        onChange={handlePwdInput}
+        isValid={pwd.isValid}
+        isTouched={pwd.isTouched}
+        placeholder="Password..."
+        value={pwd.value}
+        errorMsg="Minimum 6 characters"
+        />
+      <Input
+        name="confirmPwd"
+        type="password"
+        label="Confirm password"
+        onChange={handleConfirmPwdInput}
+        isValid={confirmPwd.isValid}
+        isTouched={confirmPwd.isTouched}
+        placeholder="Confirm password..."
+        value={confirmPwd.value}
+        errorMsg="Passwords do not match!"    
+        />
+      <Button
+      text="REGISTER"
+      onClick={handleSubmit}
+      disabled={!formIsValid}
+      />
+      </div>
     </div>
   );
 }
+
