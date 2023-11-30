@@ -1,0 +1,55 @@
+.add{
+  padding-left: 100px;
+  padding-right: 100px;
+  border: 1px solid grey;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.list{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.book{
+  display: flex;
+  font-family: sans-serif;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 1px solid grey;
+}
+.formAdd{
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  margin-right: 200px; 
+  border: 1px solid grey;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+}
+.title{
+  border-radius: 3px grey;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.author{
+  border-radius: 3px grey;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.genre{
+  border-radius: 3px grey;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+button{
+  width: 100px;
+  height: 50px;
+}
+.mot,.hai{
+  margin-right: 20px;
+  
+}

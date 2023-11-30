@@ -4,7 +4,7 @@ import { FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
 
 export default function ErrorIcon(){
     return(
-        <IconContext.Provider value={{color:"forestgreen",size:"17rem"}}>
+        <IconContext.Provider value={{color:"red",size:"1.7rem"}}>
             <FaExclamationTriangle/>
         </IconContext.Provider>
     );
